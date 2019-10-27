@@ -16,9 +16,11 @@ class Complex {
     }
     
     func incrementBy(realAmount: Double) -> Void {
+        re += realAmount
     }
     
     func incrementBy(imaginaryAmount: Double) -> Void {
+        im += imaginaryAmount
     }
     
     func incrementBy(complex: Complex) -> Void {
