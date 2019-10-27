@@ -30,12 +30,11 @@ class Complex {
     }
     
     func multiplyBy(complex: Complex) -> Void {
-        var c = complex.re
-        var d = complex.im
+        let c = complex.re
+        let d = complex.im
         //(ac-bd) + (ad+bc) i
-        var acMinusbd = (re*c) - (im*d)
-        var adPlusbc = (re*d) + (im*c)
-//        print(acMinusbd, adPlusbc)
+        let acMinusbd = (re*c) - (im*d)
+        let adPlusbc = (re*d) + (im*c)
         
         print("Multiply by complex (ac - bd) + (ad + bc) (\(acMinusbd)) + (\(adPlusbc))")
     }
