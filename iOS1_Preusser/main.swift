@@ -39,5 +39,7 @@ c.incrementBy(realAmount: 2.2)
 c.incrementBy(imaginaryAmount: 0.6)
 // result 2.2 + 4.4 i
 // 5.5 Multiply with complex number (0.5 + 1.0 i)
+let multiplyComplex = Complex(re: 0.5, im: 1.0)
+c.multiplyBy(complex: multiplyComplex)
 // 5.6 Rotate by pi (Double.pi)
 // 5.7 Calculatie with plus the sum from your result and the complex number (0.2 + 0.9 i)

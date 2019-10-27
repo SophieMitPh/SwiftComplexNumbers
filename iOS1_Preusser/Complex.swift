@@ -29,8 +29,15 @@ class Complex {
         print(re, im)
     }
     
-    func multiplyBy(by complex: Complex) -> Void {
+    func multiplyBy(complex: Complex) -> Void {
+        var c = complex.re
+        var d = complex.im
+        //(ac-bd) + (ad+bc) i
+        var acMinusbd = (re*c) - (im*d)
+        var adPlusbc = (re*d) + (im*c)
+//        print(acMinusbd, adPlusbc)
         
+        print("Multiply by complex (ac - bd) + (ad + bc) (\(acMinusbd)) + (\(adPlusbc))")
     }
     
     func rotateBy(by complex: Complex) -> Void {
