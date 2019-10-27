@@ -14,4 +14,13 @@ class Complex {
         self.re = 0.0
         self.im = 0.0
     }
+    
+    func incrementBy(realAmount: Double) -> Void {
+    }
+    
+    func incrementBy(imaginaryAmount: Double) -> Void {
+    }
+    
+    func incrementBy(complex: Complex) -> Void {
+    }
 }
