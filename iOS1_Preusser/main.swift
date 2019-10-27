@@ -21,38 +21,42 @@ import Foundation
 
 readDouble()*/
 
-func readComplexNumber() -> Complex{
+func readComplexNumber(defaultReal: Double, defaultImaginary: Double) -> Complex{
     print("Creating a complex number")
-    print("Enter real number:")
-    let InputReal:String! = readLine()
-    let InitReal = Double(InputReal) ?? 1.0
-
-    print("Enter imaginary number:")
-    let InputImaginary:String! = readLine()
-    let InitImaginary = Double(InputImaginary) ?? 2.0
     
-    return Complex(re: InitReal, im: InitImaginary)
+    return Complex(
+        re: askQuestionToDouble(question: "Enter real number:", defaultDouble: defaultReal),
+        im: askQuestionToDouble(question: "Enter imaginary number:", defaultDouble: defaultImaginary)
+    )
+}
+
+func askQuestionToDouble(question: String, defaultDouble: Double) -> Double {
+    print(question)
+    let InputString:String! = readLine()
+    
+    return Double(InputString) ?? defaultDouble
 }
 
 // Intitial complex number
-var c = readComplexNumber()
+var c = readComplexNumber(defaultReal: 1.0, defaultImaginary: 2.0)
 // 5.2 Add (1.2 + 2.4 i)
-let complexInput = readComplexNumber()
+let complexInput = readComplexNumber(defaultReal: 1.2, defaultImaginary: 2.4)
 print(complexInput.re)
 c.incrementBy(complex: complexInput)
 
 // 5.3 Add 2.2 to the real part
-c.incrementBy(realAmount: 2.2)
+c.incrementBy(realAmount: askQuestionToDouble(question: "Increment real number by amount:", defaultDouble: 2.2))
 // 5.4 Add 0.6 to imaginary part
-c.incrementBy(imaginaryAmount: 0.6)
+c.incrementBy(imaginaryAmount: askQuestionToDouble(question: "Increment imaginary number by amount", defaultDouble: 0.6))
 // result 2.2 + 4.4 i
 // 5.5 Multiply with complex number (0.5 + 1.0 i)
-let multiplyComplex = Complex(re: 0.5, im: 1.0)
+let multiplyComplex = readComplexNumber(defaultReal: 0.5, defaultImaginary: 1.0)
 c.multiplyBy(complex: multiplyComplex)
 // 5.6 Rotate by pi (Double.pi)
+print("Rotating by angle pi:")
 c.rotateBy(complex: multiplyComplex, angle: Double.pi)
 // 5.7 Calculatie with plus the sum from your result and the complex number (0.2 + 0.9 i)
-let plusComplex = Complex(re: 0.2, im: 0.9)
+let plusComplex = readComplexNumber(defaultReal: 0.2, defaultImaginary: 0.9)
 let plus = c.plus(complex: plusComplex)
 print("new incremented complex \((plus.re * 1000).rounded() / 1000) + \(plus.im)")
 
