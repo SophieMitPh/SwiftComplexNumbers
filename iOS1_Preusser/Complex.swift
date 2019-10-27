@@ -9,6 +9,7 @@
 class Complex {
     var re: Double
     var im: Double
+    
     // Initializer
     init(re: Double, im: Double) {
         self.re = 0.0
@@ -23,6 +24,15 @@ class Complex {
         im += imaginaryAmount
     }
     
-    func incrementBy(complex: Complex) -> Void {
+    func incrementBy(by complex: Complex) -> Void {
+        
+    }
+    
+    func multiplyBy(by complex: Complex) -> Void {
+        
+    }
+    
+    func rotateBy(by complex: Complex) -> Void {
+        
     }
 }
