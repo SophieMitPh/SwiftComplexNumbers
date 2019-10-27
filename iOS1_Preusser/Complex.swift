@@ -38,7 +38,6 @@ class Complex {
         let newIm = (re*d) + (im*c)
         re = newRe
         im = newIm
-        print("Multiply by complex (ac - bd) + (ad + bc) \(newRe) + \(newIm)")
     }
     
     func rotateBy(complex: Complex, angle: Double) -> Void {
@@ -49,8 +48,6 @@ class Complex {
         let newIm = (re*sinus) + (im*cosinus)
         re = newRe
         im = newIm
-        
-        print(("\((newRe * 1000).rounded() / 1000) + \(newIm)"))
     }
     
     func plus(complex: Complex) -> Complex {
@@ -58,4 +55,13 @@ class Complex {
 
         return complex
     }
+    
+    func printCurrentComplexNumber(){
+        
+        let sumSymbol = im > 0 ? "+" : "-"
+        let formatImaginary = im > 0 ? im : abs(im)
+        
+        print("The current complex number is: \((re * 1000).rounded() / 1000) \(sumSymbol) \(formatImaginary)i")
+    }
 }
+
