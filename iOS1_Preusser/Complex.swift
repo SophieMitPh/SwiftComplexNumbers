@@ -1,0 +1,17 @@
+//
+//  main.swift
+//  iOS1Preusser
+//
+//  Created by Preußer, Sophie on 15.10.19.
+//  Copyright © 2019 Preußer, Sophie. All rights reserved.
+//
+
+class Complex {
+    var re: Double
+    var im: Double
+    // Initializer
+    init(re: Double, im: Double) {
+        self.re = 0.0
+        self.im = 0.0
+    }
+}
