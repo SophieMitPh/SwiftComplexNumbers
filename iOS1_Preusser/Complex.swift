@@ -35,4 +35,8 @@ class Complex {
     func rotateBy(by complex: Complex) -> Void {
         
     }
+    
+    func plus(complex: Complex) -> Complex {
+        return self
+    }
 }
