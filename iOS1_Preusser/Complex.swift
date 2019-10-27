@@ -6,6 +6,8 @@
 //  Copyright © 2019 Preußer, Sophie. All rights reserved.
 //
 
+import Darwin
+
 class Complex {
     var re = 0.0
     var im = 0.0
@@ -33,14 +35,23 @@ class Complex {
         let c = complex.re
         let d = complex.im
         //(ac-bd) + (ad+bc) i
-        let acMinusbd = (re*c) - (im*d)
-        let adPlusbc = (re*d) + (im*c)
-        
-        print("Multiply by complex (ac - bd) + (ad + bc) (\(acMinusbd)) + (\(adPlusbc))")
+        let newRe = (re*c) - (im*d)
+        let newIm = (re*d) + (im*c)
+        re = newRe
+        im = newIm
+        print("Multiply by complex (ac - bd) + (ad + bc) (\(newRe)) + (\(newIm))")
     }
     
-    func rotateBy(by complex: Complex) -> Void {
+    func rotateBy(complex: Complex, angle: Double) -> Void {
+        let cosinus = cos(angle)
+        let sinus = sin(angle)
+        //(a*cosinus-b*sinus) + (ad+bc) i
+        let newRe = (re*cosinus) - (im*sinus)
+        let newIm = (re*sinus) + (im*cosinus)
+        re = newRe
+        im = newIm
         
+        print(("(\((newRe * 1000).rounded() / 1000)) + (\(newIm))"))
     }
     
     func plus(complex: Complex) -> Complex {
