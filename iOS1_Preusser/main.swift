@@ -21,15 +21,23 @@ import Foundation
 
 readDouble()*/
 
-/*print("Type a random number")
+func readComplexNumber() -> Complex{
+    print("Creating a complex number")
+    print("Enter real number:")
+    let InputReal:String! = readLine()
+    let InitReal = Double(InputReal) ?? 1.0
 
-let test:String! = readLine()
-var i = Complex(test)*/
+    print("Enter imaginary number:")
+    let InputImaginary:String! = readLine()
+    let InitImaginary = Double(InputImaginary) ?? 2.0
+    
+    return Complex(re: InitReal, im: InitImaginary)
+}
 
 // Intitial complex number
-var c = Complex(re: 1.0, im: 2.0)
+var c = readComplexNumber()
 // 5.2 Add (1.2 + 2.4 i)
-let complexInput = Complex(re: 1.2, im: 2.4)
+let complexInput = readComplexNumber()
 print(complexInput.re)
 c.incrementBy(complex: complexInput)
 
@@ -44,3 +52,7 @@ c.multiplyBy(complex: multiplyComplex)
 // 5.6 Rotate by pi (Double.pi)
 c.rotateBy(complex: multiplyComplex, angle: Double.pi)
 // 5.7 Calculatie with plus the sum from your result and the complex number (0.2 + 0.9 i)
+let plusComplex = Complex(re: 0.2, im: 0.9)
+let plus = c.plus(complex: plusComplex)
+print("new incremented complex \((plus.re * 1000).rounded() / 1000) + \(plus.im)")
+
