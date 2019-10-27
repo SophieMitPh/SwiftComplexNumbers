@@ -8,18 +8,14 @@
 
 import Foundation
 
-//print("Type a random number")
-
-//let test:String! = readLine()
-//var i = Double(test)
-
-//var error: Double? = 0.0
-
-/*func readDouble(){
-    print("Double: \(i)"  ?? error)
+func readDouble(){
+    print("Type a random number")
+    let test:String! = readLine()
+    let i = Double(test) ?? 0.0
+    print("Double: \(i)")
 }
 
-readDouble()*/
+readDouble()
 
 func readComplexNumber(defaultReal: Double, defaultImaginary: Double) -> Complex{
     print("Creating a complex number")
