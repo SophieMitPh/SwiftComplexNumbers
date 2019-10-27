@@ -7,13 +7,12 @@
 //
 
 class Complex {
-    var re: Double
-    var im: Double
-    
+    var re = 0.0
+    var im = 0.0
     // Initializer
     init(re: Double, im: Double) {
-        self.re = 0.0
-        self.im = 0.0
+        self.re = re
+        self.im = im
     }
     
     func incrementBy(realAmount: Double) -> Void {
@@ -24,8 +23,10 @@ class Complex {
         im += imaginaryAmount
     }
     
-    func incrementBy(by complex: Complex) -> Void {
-        
+    func incrementBy(complex: Complex) -> Void {
+        self.incrementBy(imaginaryAmount: complex.im)
+        self.incrementBy(realAmount: complex.re)
+        print(re, im)
     }
     
     func multiplyBy(by complex: Complex) -> Void {
